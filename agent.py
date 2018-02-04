@@ -1,19 +1,10 @@
-from gameobjects import GameObject
 from move import Move
+import qlearning as learn
 
-import numpy as np
-
-# how many points in graph? x points
-MATRIX_SIZE = 5
-# create matrix x*y
-Q = np.matrix(np.zeros([MATRIX_SIZE,MATRIX_SIZE]))
-gamma = 0.8
+qLearn = learn.QLearningTable.__init__()
 
 class Agent:
     def get_move(self, board, score, turns_alive, turns_to_starve, direction):
-
-
-
 
         """
         An implementation of the RL algorithm

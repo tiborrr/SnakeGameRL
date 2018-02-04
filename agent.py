@@ -1,19 +1,23 @@
 from gameobjects import GameObject
 from move import Move
-from heapq import *
-from pypaths import astar
 
 import numpy as np
+
+# how many points in graph? x points
+MATRIX_SIZE = 5
+# create matrix x*y
+Q = np.matrix(np.zeros([MATRIX_SIZE,MATRIX_SIZE]))
+gamma = 0.8
 
 class Agent:
     def get_move(self, board, score, turns_alive, turns_to_starve, direction):
 
 
+
+
         """
         An implementation of the RL algorithm
         """
-
-
 
         """This function behaves as the 'brain' of the snake. You only need to change the code in this function for
         the project. Every turn the agent needs to return a move. This move will be executed by the snake. If this
@@ -52,6 +56,9 @@ class Agent:
 
         # If else fails, do this:
         return Move.STRAIGHT
+
+    def learn(self, s, a, r, s_):
+        pass
 
     def on_die(self):
         """This function will be called whenever the snake dies. After its dead the snake will be reincarnated into a

@@ -10,8 +10,8 @@ class Snake:
     def __init__(self, board_width, board_height, max_tics_to_starve):
         self.board_width = board_width
         self.board_height = board_height
-        self.x = randint(0, board_width - 1)
-        self.y = randint(0, board_height - 1)
+        self.x = 0
+        self.y = 4
         self.direction = Direction.NORTH
         self.body_parts = []
         self.score = 0
@@ -66,7 +66,8 @@ class Snake:
         self.score = 0
         self.direction = Direction.NORTH
         self.tics_to_starve = self.max_tics_to_starve
-        self.x, self.y = board.get_free_xy()
+        self.x = 0
+        self.y = 4
         self.body_parts = []
 
     def contains_body(self, x, y):

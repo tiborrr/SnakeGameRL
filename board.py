@@ -18,9 +18,6 @@ class Board:
         if not test_config:
             for i in range(nr_walls):
                 self.spawn_wall()
-        else:
-            self.set_game_object_at(7, 5, GameObject.WALL)
-            self.set_game_object_at(15, 8, GameObject.WALL)
 
         for i in range(max_nr_food):
             self.spawn_new_food()
@@ -60,7 +57,7 @@ class Board:
         return copy
 
     def spawn_new_food(self):
-        self.spawn_random_object(GameObject.FOOD)
+        self.board[4][0] = GameObject.FOOD
 
     def spawn_wall(self):
         self.spawn_random_object(GameObject.WALL)
